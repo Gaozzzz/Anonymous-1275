@@ -15,7 +15,7 @@ class Network(nn.Module):
         self.Out_Pred = Pred.Out_Pred()
 
     def _init_weights(self):
-        pretrained_dict = torch.load('lib/backbone/pretrain/mit_b4.pth')
+        pretrained_dict = torch.load('lib/backbone/mit_b4.pth')
         model_dict = self.backbone.state_dict()
         pretrained_dict = {k: v for k, v in pretrained_dict.items() if k in model_dict}
         model_dict.update(pretrained_dict)
