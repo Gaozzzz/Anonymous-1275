@@ -13,10 +13,25 @@ Anonymous-1275 for acm mm2023
 
 2. Place the downloaded `mit_b4.pth` and `The_best_Epoch.pth` files in the appropriate paths:
 
-   - Place `mit_b4.pth` in the `lib/backbone/` directory (recommended path).
-   - Place `The_best_Epoch.pth` in the `experiment/exp_icformer_1/` directory (recommended path).
+   - Place `mit_b4.pth` in the `lib/backbone/` (recommended path).
+   - Place `The_best_Epoch.pth` in the `experiment/exp_icformer_1/` (recommended path).
 
 3. (Optional) You can update the file paths in the code for these parameters:
 
    - In `/lib/network/network_demo2.py`, set the path for `mit_b4.pth`.
    - In `test`, set the path for `The_best_Epoch.pth`.
+
+## Train and Test Settings
+
+Please follow the instructions in Section 4.1 of the paper to properly split your dataset. After splitting the dataset, update the corresponding arguments in `train.py` and `test.py` accordingly.
+
+### Train Settings
+
+1. Update the dataset path in `train.py` according to your dataset location.
+
+### Test Settings
+
+1. Update the dataset path in `test.py` according to your dataset location.
+2. Ensure that the trained model path is correctly set in `test.py` to load the appropriate model for testing.
+
+
