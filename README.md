@@ -19,7 +19,7 @@ Anonymous-1275 for acm mm2023
 3. (Optional) You can update the file paths in the code for these parameters:
 
    - In `/lib/network/network_demo2.py`, set the path for `mit_b4.pth`.
-   - In `test`, set the path for `The_best_Epoch.pth`.
+   - In `test.py`, set the path for `The_best_Epoch.pth`.
 
 ## Train and Test Settings
 
