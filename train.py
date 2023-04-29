@@ -14,13 +14,10 @@ from utils.utils import plot_loss
 
 def _args():
     parser = argparse.ArgumentParser()
-    """路径"""
     parser.add_argument('--trainData_path', default='set your train dataset path')
     parser.add_argument('--testData_path', default='set your test dataset path')
     parser.add_argument('--valData_path', default='set your val dataset path')
     parser.add_argument('--save_path', default='set your save path')
-
-    """参数"""
     parser.add_argument('--lr', default=1e-4)
     parser.add_argument('--batchsize', default=16)
     parser.add_argument('--epoch', default=50)
@@ -113,7 +110,7 @@ def train(args):
             train_loader), position=1, leave=False, bar_format='{desc:<5.5}{percentage:3.0f}%|{bar:40}{r_bar}')
         for _, pack in iterator:
             for rate in size_rates:
-                """准备数据"""
+                """"""
                 image, gt = pack
                 image = image.to(device)
                 gt = gt.to(device)
@@ -124,7 +121,7 @@ def train(args):
                     image = F.upsample(image, size=(trainsize, trainsize), mode='bilinear', align_corners=True)
                     gt = F.upsample(gt, size=(trainsize, trainsize), mode='bilinear', align_corners=True)
 
-                """前向反向"""
+                """"""
                 optimizer.zero_grad()
                 pred = model(image)
                 res = F.interpolate(pred[0], size=gt.shape[-2:], mode='bilinear', align_corners=True)
@@ -133,7 +130,7 @@ def train(args):
                 loss.backward()
                 optimizer.step()
 
-                """显示loss"""
+                """loss"""
                 if rate == 1:
                     iterator.set_postfix({'loss': loss.item()})
 
@@ -152,12 +149,12 @@ def train(args):
         early_stopping += 1
         if early_stopping > patience:
             print("Early_Stopping!")
-            print("最好的模型出现在第{}轮".format(best_epoch))
-            print("模型在验证集上最好指标为{}".format(best))
-            print("模型保存成功！")
+            print("The best epoch: {}".format(best_epoch))
+            print("The best mDice: {}".format(best))
+            print("save！")
             break
     torch.save(model.state_dict(), f'{args.save_path}/The_latest_epoch{str(epoch)}.pth')
-    print('*' * 20, '保存最终参数')
+    print('*' * 20, 'save final weights')
 
     """loss curve"""
     plot_loss(train_loss, args.save_path)
