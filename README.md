@@ -1,7 +1,7 @@
 # Anonymous-1275
 Anonymous-1275 for acm mm2023
 
-**Model Parameter Files Setup**
+## Model Parameter Files Setup
 1. Download the model parameter files:
 
    - Parameter for pre-trained backbone: [mit_b4.pth](https://pan.baidu.com/s/1ZPzha0T-crFndYjISoIj6w?pwd=4l3b)
