@@ -27,7 +27,7 @@ Anonymous-1275 for acm mm2023
 
 Please follow the instructions in Section 4.1 of the paper to properly split your dataset. After splitting the dataset, update the corresponding arguments in `train.py` and `test.py` accordingly.
 
-(Optional) You can refer to the work of MICCAI2020 https://github.com/DengPingFan/PraNet for related datasets.
+(Optional) You can refer to the work of ACMMM2021 https://github.com/plemeri/UACANet for related datasets.
 
 ### Train Settings
 
