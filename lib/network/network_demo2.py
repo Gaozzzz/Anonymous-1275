@@ -9,7 +9,7 @@ class Network(nn.Module):
         super().__init__()
         self.backbone = mit_1100.mit_b4()
         self._init_weights()  # load pretrain
-        self.Encoder = Encoder.Encoder(self.backbone.embed_dims)  # embed_dims=[64, 128, 320, 512]
+        self.Encoder = Encoder.Encoder(self.backbone.embed_dims)
         self.Cl_Encoder = Encoder.Cl_Encoder(self.backbone.embed_dims)
         self.Decoder = Decoder.Decoder(self.backbone.embed_dims)
         self.Out_Pred = Pred.Out_Pred()
@@ -24,9 +24,9 @@ class Network(nn.Module):
 
     def forward(self, x):
         backbone = self.backbone(x)
-        encoder = self.Encoder(backbone)  # encoder = [encoder1, encoder2, encoder3, encoder4]
-        encoder, contrast_loss = self.Cl_Encoder(encoder)  # encoder = [encoder1, encoder2, cl_encoder3, cl_encoder4]
-        decoder = self.Decoder(encoder)  # decoder = [decoder1, decoder2, decoder3, decoder4]
+        encoder = self.Encoder(backbone)
+        encoder, contrast_loss = self.Cl_Encoder(encoder)
+        decoder = self.Decoder(encoder)
         pred = self.Out_Pred(decoder)
         res = pred, contrast_loss
 
