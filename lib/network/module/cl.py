@@ -14,8 +14,7 @@ class Contrastive_loss(nn.Module):
 
     def projection(self, z: torch.Tensor) -> torch.Tensor:
         z = rearrange(z, 'b c h w -> b (h w) c')
-        z = F.elu(self.fc1(z))
-        return self.fc2(z)
+        return z
 
     def sim(self, z1: torch.Tensor, z2: torch.Tensor):
         z1 = F.normalize(z1, dim=2)
