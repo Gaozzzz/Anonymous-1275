@@ -138,7 +138,7 @@ def train(args):
 
         """Val"""
         if (epoch + 1) % 1 == 0:
-            valdice = test(model, args.testData_path, 'test', device)
+            valdice = test(model, args.valData_path, 'val', device)
 
             if valdice > best:
                 best = valdice
