@@ -8,22 +8,6 @@ from thop import clever_format
 from thop import profile
 
 
-def CalParams(model, input_tensor):
-    """
-    Usage:
-        Calculate Params and FLOPs via [THOP](https://github.com/Lyken17/pytorch-OpCounter)
-    Necessarity:
-        from thop import profile
-        from thop import clever_format
-    :param model:
-    :param input_tensor:
-    :return:
-    """
-    flops, params = profile(model, inputs=(input_tensor,))
-    flops, params = clever_format([flops, params], "%.3f")
-    print('[Statistics Information]\nFLOPs: {}\nParams: {}'.format(flops, params))
-
-
 def load_config(config_dir):
     return ed(yaml.load(open(config_dir), yaml.FullLoader))
 
