@@ -46,7 +46,7 @@ if __name__ == '__main__':
             image = image.cuda()
             out = model(image)
             res = out[0]
-            res = F.upsample(res, size=gt.shape, mode='bilinear', align_corners=False)  # 记得改
+            res = F.upsample(res, size=gt.shape, mode='bilinear', align_corners=False)
             res = res.sigmoid().data.cpu().numpy().squeeze()
             res = (res - res.min()) / (res.max() - res.min() + 1e-8)
             prs.append(res)
