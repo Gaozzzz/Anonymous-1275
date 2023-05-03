@@ -3,10 +3,6 @@ import torch.nn as nn
 
 
 class Linear(nn.Module):
-    """
-    Linear Prediction
-    """
-
     def __init__(self, input_dim=2048, embed_dim=768):
         super().__init__()
         self.proj = nn.Linear(input_dim, embed_dim)
