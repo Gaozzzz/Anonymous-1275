@@ -13,22 +13,6 @@ class Linear(nn.Module):
         x = self.proj(x)
         return x.reshape(B, H, W, -1).permute(0, 3, 1, 2).contiguous()
 
-
-class BasicConv2d(nn.Module):  
-    def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, dilation=1):
-        super(BasicConv2d, self).__init__()
-        self.conv = nn.Conv2d(in_planes, out_planes,
-                              kernel_size=kernel_size, stride=stride,
-                              padding=padding, dilation=dilation, bias=False)
-        self.bn = nn.BatchNorm2d(out_planes)
-        self.relu = nn.ReLU(inplace=True)
-
-    def forward(self, x):
-        x = self.conv(x)
-        x = self.bn(x)
-        return x
-
-
 class Skip_Concat(nn.Module):
     def __init__(self):
         super(Skip_Concat, self).__init__()
