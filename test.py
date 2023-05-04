@@ -12,8 +12,8 @@ if __name__ == '__main__':
     torch.cuda.set_device(0)
     parser = argparse.ArgumentParser()
     parser.add_argument('--testsize', type=int, default=352, help='testing size')
-    parser.add_argument('--experiment_path', type=str, default='experiment', help='set your experiment path')
-    parser.add_argument('--testData_path', default='set your test dataset path')
+    parser.add_argument('--experiment_path', type=str, default='experiment', help='Set your experiment path')
+    parser.add_argument('--testData_path', default='Set your test dataset path')
     opt = parser.parse_args()
 
     #   set model path
