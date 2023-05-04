@@ -13,10 +13,10 @@ from utils.loss_function import structure_loss
 
 def _args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--trainData_path', default='set your train dataset path')
-    parser.add_argument('--testData_path', default='set your test dataset path')
-    parser.add_argument('--valData_path', default='set your val dataset path')
-    parser.add_argument('--save_path', default='set your save path')
+    parser.add_argument('--trainData_path', default='Set your train dataset path')
+    parser.add_argument('--testData_path', default='Set your test dataset path')
+    parser.add_argument('--valData_path', default='Set your val dataset path')
+    parser.add_argument('--save_path', default='Set your save path')
 
     parser.add_argument('--lr', default=1e-4)
     parser.add_argument('--batchsize', default=16)
