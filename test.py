@@ -26,8 +26,7 @@ if __name__ == '__main__':
     model.eval()
 
     for _data_name in ['Kvasir', 'CVC-ClinicDB', 'CVC-ColonDB', 'ETIS-LaribPolypDB', 'CVC-300', ]:
-        ##### put data_path here #####
-        #   set your test dataset path
+        #   Set your test dataset path
         data_path = f'{opt.testData_path}/{_data_name}'
         ##### save_path #####
         save_path = os.path.join(opt.experiment_path, Path, _data_name)
