@@ -1,7 +1,5 @@
 ICFormer: Transformer with Inverse-Attention and Contrastive Learning for Polyp Segmentation
 
-PaperID-1275 for acm mm2023
-
 ### Datasets
 1. You can refer to the work of ACMMM2021 https://github.com/plemeri/UACANet for related datasets.
 
