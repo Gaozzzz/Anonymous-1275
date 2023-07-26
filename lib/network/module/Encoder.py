@@ -5,7 +5,20 @@ from .cl import Contrastive_loss
 from .utils import Linear
 
 
-class Encoder(nn.Module):
+class Encoder_1(nn.Module):
+    def __init__(self, embed_dims=[64, 128, 320, 512]):
+        super(Encoder, self).__init__()
+        self.linear_encoder1 = Linear(input_dim=embed_dims[0], embed_dim=embed_dims[0])
+        self.linear_encoder2 = Linear(input_dim=embed_dims[1], embed_dim=embed_dims[1])
+        self.linear_encoder3 = Linear(input_dim=embed_dims[2], embed_dim=embed_dims[2])
+        self.linear_encoder4 = Linear(input_dim=embed_dims[3], embed_dim=embed_dims[3])
+
+    def forward(self, backbone):
+        encoder = [encoder1, encoder2, encoder3, encoder4]
+
+        return encoder
+
+class Encoder_2(nn.Module):
     def __init__(self, embed_dims=[64, 128, 320, 512]):
         super(Encoder, self).__init__()
         self.linear_encoder1 = Linear(input_dim=embed_dims[0], embed_dim=embed_dims[0])
