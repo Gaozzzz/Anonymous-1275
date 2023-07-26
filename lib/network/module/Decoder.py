@@ -33,7 +33,7 @@ class Decoder_1(nn.Module):
         encoder1, encoder2, encoder3, encoder4 = encoder
 
         #   decoder3
-        decoder3 = self.skip_concat(encoder3, decoder4)
+        decoder3 = self.skip_concat(encoder3, encoder4)
         decoder3 = self.linear_concat34(self.conv_concat34(decoder3))
 
         #   decoder2
