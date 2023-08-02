@@ -5,6 +5,7 @@ from mmcv.cnn import ConvModule
 from .utils import Linear, Skip_Concat
 
 
+# "You can easily replace the network framework for updates or debugging."
 class Decoder_1(nn.Module):
     def __init__(self, embed_dims=[64, 128, 320, 512]):
         super(Decoder, self).__init__()
