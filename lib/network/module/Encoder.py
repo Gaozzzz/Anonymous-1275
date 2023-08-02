@@ -5,6 +5,7 @@ from .cl import Contrastive_loss
 from .utils import Linear
 
 
+# "You can easily replace the network framework for updates or debugging."
 class Encoder_1(nn.Module):
     def __init__(self, embed_dims=[64, 128, 320, 512]):
         super(Encoder, self).__init__()
