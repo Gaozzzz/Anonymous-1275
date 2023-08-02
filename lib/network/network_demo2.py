@@ -4,7 +4,7 @@ import torch.nn as nn
 from .module import mit_1100, Encoder, Decoder, Pred
 
 
-# "You can easily replace the network framework for updates or debugging."
+# "You can easily replace each moudle for updates or debugging."
 class Network(nn.Module):
     def __init__(self):
         super().__init__()
