@@ -1,7 +1,7 @@
 ICFormer: Transformer with Inverse-Attention and Contrastive Learning for Polyp Segmentation
 
 ### Datasets
-1. You can refer to the work of ACMMM2021 https://github.com/plemeri/UACANet for related datasets.
+1. You can refer to the work of MICCAI2020 https://github.com/DengPingFan/PraNet for related datasets.
 
 2. Please follow the Section 4.1 of the paper to properly split your dataset. 
 3. After splitting the dataset, update the corresponding path in `train.py` and `test.py` accordingly.
